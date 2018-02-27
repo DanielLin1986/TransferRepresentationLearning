@@ -6,6 +6,18 @@ Hi there, welcome to this pape!
 
 The Vulnerabilities_info.xlsx file contains information of the collected function-level vulnerabilities. These vulnerabilities are from 6 open source projects: [FFmpeg](https://github.com/FFmpeg/FFmpeg), [LibTIFF](https://github.com/vadz/libtiff), [LibPNG](https://github.com/glennrp/libpng), [Pidgin](https://pidgin.im/), [Asterisk](https://www.asterisk.org/get-started) and [VLC Media Player](https://www.videolan.org/vlc/index.html) . And vulnerability information was collected from [National Vulnerability Database(NVD)](https://nvd.nist.gov/) until the end of July 2017.
 
+### Requirements:
+
+ * [Tensorflow](https://www.tensorflow.org/)
+ * [Keras](https://github.com/fchollet/keras/tree/master/keras)
+ * Python >= 2.7
+
+The dependencies can be installed using [Anaconda](https://www.anaconda.com/download/). For example:
+
+```bash
+$ bash Anaconda3-5.0.1-Linux-x86_64.sh
+```
+
 The "Data" folder contains the following sub folders:
 1) VulnerabilityData -- It contains the vulnerable function data from 6 open source projects. Each file was named with the name of the project. For example, the FFmpeg.zip file contains the 4 .pkl files. The PKL file stores the Python object in binary form. The ffmpeg_list.pkl file stores all the FFmpeg functions (including vulnerable and neutral functions) in serialized AST forms. The ffmpeg_list_id.pkl file stores all the name of the functions as their IDs. The except_ffmpeg_list.pkl file stores the functions (in serialized AST forms) of the other 5 opens source projects. In the pre-training phase, the except_ffmpeg_list.pkl file is used as the historical data for training a LSTM network (the labels can be generated based on the functions IDs, please see the code for more details). Then, the ffmpeg_list.pkl file is used as the input to the pre-trained network for generating representations. Finally, the generated representations can be used as features for training a classifier. 
 2) CodeMetrics -- It stores the code metrics of the open source projects. The code metrics are used as features to train a random forest classifier as the baseline to compare with the method which uses transfer-learned representations as features. We used [Understand](https://scitools.com/) which is a commercial code enhancement tool for extracting function-level code metrics. We included 23 code metrics extracted from the vulnerable functions of 6 projects. 
