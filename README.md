@@ -1,15 +1,17 @@
 ## Transferable Representation Learning
 
-Hi there, welcome to this pape!
+Hi there, welcome to this page!
 
 ### Instructions:
 
-The Vulnerabilities_info.xlsx file contains information of the collected function-level vulnerabilities. These vulnerabilities are from 6 open source projects: [FFmpeg](https://github.com/FFmpeg/FFmpeg), [LibTIFF](https://github.com/vadz/libtiff), [LibPNG](https://github.com/glennrp/libpng), [Pidgin](https://pidgin.im/), [Asterisk](https://www.asterisk.org/get-started) and [VLC Media Player](https://www.videolan.org/vlc/index.html) . And vulnerability information was collected from [National Vulnerability Database(NVD)](https://nvd.nist.gov/) until the end of July 2017.
+The Vulnerabilities_info.xlsx file contains information of the collected function-level vulnerabilities. These vulnerabilities are from 6 open source projects: [FFmpeg](https://github.com/FFmpeg/FFmpeg), [LibTIFF](https://github.com/vadz/libtiff), [LibPNG](https://github.com/glennrp/libpng), [Pidgin](https://pidgin.im/), [Asterisk](https://www.asterisk.org/get-started) and [VLC Media Player](https://www.videolan.org/vlc/index.html). And vulnerability information was collected from [National Vulnerability Database(NVD)](https://nvd.nist.gov/) until the end of July 2017.
 
 ### Requirements:
 
  * [Tensorflow](https://www.tensorflow.org/)
  * [Keras](https://github.com/fchollet/keras/tree/master/keras)
+ * [Scikit-learn](http://scikit-learn.org/stable/)
+ * [Gensim](https://radimrehurek.com/gensim/)
  * Python >= 2.7
 
 The dependencies can be installed using [Anaconda](https://www.anaconda.com/download/). For example:
@@ -29,4 +31,4 @@ The "Code" folder contains the Python code samples.
 2) ExtractLearnedFeaturesAndClassification.py file is to obtain the function representations from the pre-trained LSTM network. It also includes the code for training a random forest classifier based on the obtained function representations as features.
 3) CodeMetrics.py file is to train a random forest classifier based on the selected 23 code metrics.
 
-Please be noted that the paper is still under revision, therefore the data files are stored as zip files protected with passwords except the FFmpeg project. All the data will be available once the paper is accepted. Thank you!
+Please be noted that the paper is still under revision, therefore, the data files are stored as zip files protected with passwords except the FFmpeg project. All the data will be available once the paper is accepted. Thank you!
