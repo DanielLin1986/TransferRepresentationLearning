@@ -2,7 +2,7 @@
 
 Hi there, welcome to this page!
 
-This page contains the code and data used in the paper [Cross-Project Transfer Representation Learning for Vulnerable Function Discovery] (https://ieeexplore.ieee.org/abstract/document/8329207/) by Guanjun Lin; Jun Zhang; Wei Luo; Lei Pan; Yang Xiang; Olivier De Vel and Paul Montague.
+This page contains the code and data used in the paper [Cross-Project Transfer Representation Learning for Vulnerable Function Discovery](https://ieeexplore.ieee.org/abstract/document/8329207/) by Guanjun Lin; Jun Zhang; Wei Luo; Lei Pan; Yang Xiang; Olivier De Vel and Paul Montague.
 
 ### Instructions:
 
@@ -44,6 +44,7 @@ The data in this repository is processed data (*.pkl files store the processed A
 
 The latex format:
 
+```
 @article{lin2018cross,
   title={Cross-Project Transfer Representation Learning for Vulnerable Function Discovery},
   author={Lin, Guanjun and Zhang, Jun and Luo, Wei and Pan, Lei and Xiang, Yang and De Vel, Olivier and Montague, Paul},
@@ -51,5 +52,6 @@ The latex format:
   year={2018},
   publisher={IEEE}
 }
+```
 
 Thank you!
