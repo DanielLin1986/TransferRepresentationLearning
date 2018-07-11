@@ -40,7 +40,7 @@ The "Code" folder contains the Python code samples.
 
 3) CodeMetrics.py file is to train a random forest classifier based on the selected 23 code metrics.
 
-The data in this repository is processed data (*.pkl files store the processed ASTs in serialized format). If you are interested in our project and would like to have the vulnerable functions we labeled, please contact junzhang@swin.edu.au. If you use our code and data in your work, please kindly cite our paper in your work. 
+The data in this repository is the processed data (*.pkl files store the processed ASTs in serialized format). If you are interested in our project and would like to have the vulnerable functions we labeled, please contact junzhang@swin.edu.au. If you use our code and data in your work, please kindly cite our paper in your work. 
 
 The latex format:
 
