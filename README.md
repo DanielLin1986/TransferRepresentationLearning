@@ -23,9 +23,9 @@ $ bash Anaconda3-5.0.1-Linux-x86_64.sh
 ```
 
 The "Data" folder contains the following sub folders:
-1) VulnerabilityData -- It contains a ZIP file which are the vulnerable and part of non_vulnerable functions from 6 open source projects. Unzip the file, one will find 6 folders named with the projects. Each folder contains the source code of the non-vulnerable functions (named with their functions) and vulnerable functions (named with the CVE IDs). 
+1) VulnerabilityData -- It contains a ZIP file which stores the vulnerable and part of non_vulnerable functions from 6 open source projects. Unzip the file, one will find 6 folders named with the projects. Each folder contains the source code of the non-vulnerable functions (named with their function names) and vulnerable functions (named with the CVE IDs). 
 
-In the pre-training phase, one can choose any 5 projects as the historical data for training a LSTM network (the labels can be generated based on the file names (vulnerable functions have the CVE IDs as their file names). please see the code for more details). Then, the remaining 1 project can be used as the input to the pre-trained network for generating representations. Finally, the generated representations can be used as features for training a classifier. 
+In the pre-training phase, one can choose any 5 projects as the historical data for training a LSTM network (the labels can be generated based on the file names (vulnerable functions have the CVE IDs as their file names. Please see the code for more details). Then, the remaining 1 project can be used as the input to the pre-trained network for generating representations. Finally, the generated representations can be used as features for training a classifier. 
 
 2) CodeMetrics -- It stores the code metrics extracted from the source code files of the open source projects. The code metrics are used as features to train a random forest classifier as the baseline to compare with the method which uses transfer-learned representations as features. We used [Understand](https://scitools.com/) which is a commercial code enhancement tool for extracting function-level code metrics. We included 23 code metrics extracted from the vulnerable functions of 6 projects.
  
