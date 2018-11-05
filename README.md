@@ -23,11 +23,11 @@ $ bash Anaconda3-5.0.1-Linux-x86_64.sh
 ```
 
 The "Data" folder contains the following sub folders:
-1) VulnerabilityData -- It contains the vulnerable function data from 6 open source projects. Each file was named with the name of the project. For example, the FFmpeg.zip file contains the 4 .pkl files. The PKL file stores the Python object in binary form. The ffmpeg_list.pkl file stores all the FFmpeg functions (including vulnerable and non-vulnerable functions) in serialized AST forms. The ffmpeg_list_id.pkl file stores all the name of the functions as their IDs. The except_ffmpeg_list.pkl file stores the functions (in serialized AST forms) of the other 5 opens source projects. 
+1) VulnerabilityData -- It contains a ZIP file which are the vulnerable and part of non_vulnerable functions from 6 open source projects. Unzip the file, one will find 6 folders named with the projects. Each folder contains the source code of the non-vulnerable functions (named with their functions) and vulnerable functions (named with the CVE IDs). 
 
-In the pre-training phase, the except_ffmpeg_list.pkl file is used as the historical data for training a LSTM network (the labels can be generated based on the functions IDs, please see the code for more details). Then, the ffmpeg_list.pkl file is used as the input to the pre-trained network for generating representations. Finally, the generated representations can be used as features for training a classifier. 
+In the pre-training phase, one can choose any 5 projects as the historical data for training a LSTM network (the labels can be generated based on the file names (vulnerable functions have the CVE IDs as their file names). please see the code for more details). Then, the remaining 1 project can be used as the input to the pre-trained network for generating representations. Finally, the generated representations can be used as features for training a classifier. 
 
-2) CodeMetrics -- It stores the code metrics of the open source projects. The code metrics are used as features to train a random forest classifier as the baseline to compare with the method which uses transfer-learned representations as features. We used [Understand](https://scitools.com/) which is a commercial code enhancement tool for extracting function-level code metrics. We included 23 code metrics extracted from the vulnerable functions of 6 projects.
+2) CodeMetrics -- It stores the code metrics extracted from the source code files of the open source projects. The code metrics are used as features to train a random forest classifier as the baseline to compare with the method which uses transfer-learned representations as features. We used [Understand](https://scitools.com/) which is a commercial code enhancement tool for extracting function-level code metrics. We included 23 code metrics extracted from the vulnerable functions of 6 projects.
  
 3) TrainedTokenizer -- It contains the trained tokenizer file which is used for converting the serialized AST lists to numeric tokens.
 
@@ -40,7 +40,7 @@ The "Code" folder contains the Python code samples.
 
 3) CodeMetrics.py file is to train a random forest classifier based on the selected 23 code metrics.
 
-The data in this repository is the processed data (*.pkl files store the processed ASTs in serialized format). If you are interested in our project and would like to have the vulnerable functions we labeled, please contact junzhang@swin.edu.au. If you use our code and data in your work, please kindly cite our paper in your work. 
+If you are interested in our project, please contact junzhang@swin.edu.au for more information. If you use our code and data in your work, please kindly cite our paper in your work. 
 
 The latex format:
 
