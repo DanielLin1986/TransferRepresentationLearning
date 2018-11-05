@@ -6,7 +6,7 @@ This page contains the code and data used in the paper [Cross-Project Transfer R
 
 ### Instructions:
 
-The Vulnerabilities_info.xlsx file contains information of the collected function-level vulnerabilities. These vulnerabilities are from 6 open source projects: [FFmpeg](https://github.com/FFmpeg/FFmpeg), [LibTIFF](https://github.com/vadz/libtiff), [LibPNG](https://github.com/glennrp/libpng), [Pidgin](https://pidgin.im/), [Asterisk](https://www.asterisk.org/get-started) and [VLC Media Player](https://www.videolan.org/vlc/index.html). And vulnerability information was collected from [National Vulnerability Database(NVD)](https://nvd.nist.gov/) until the end of July 2017.
+The Vulnerabilities_info.xlsx file contains information of the collected function-level vulnerabilities (It just a record for reference.). These vulnerabilities are from 6 open source projects: [FFmpeg](https://github.com/FFmpeg/FFmpeg), [LibTIFF](https://github.com/vadz/libtiff), [LibPNG](https://github.com/glennrp/libpng), [Pidgin](https://pidgin.im/), [Asterisk](https://www.asterisk.org/get-started) and [VLC Media Player](https://www.videolan.org/vlc/index.html). And vulnerability information was collected from [National Vulnerability Database(NVD)](https://nvd.nist.gov/) until the end of July 2017.
 
 ### Requirements for code:
 
@@ -23,7 +23,9 @@ $ bash Anaconda3-5.0.1-Linux-x86_64.sh
 ```
 
 The "Data" folder contains the following sub folders:
-1) VulnerabilityData -- It contains a ZIP file which stores the vulnerable and part of non_vulnerable functions from 6 open source projects. Unzip the file, one will find 6 folders named with the projects. Each folder contains the source code of the non-vulnerable functions (named with their function names) and vulnerable functions (named with the CVE IDs). 
+1) VulnerabilityData -- It contains a ZIP file which stores the vulnerable and part of non_vulnerable functions from 6 open source projects. Unzip the file, one will find 6 folders named with the projects. Each folder contains the source code of the non-vulnerable functions (named with their function names) and vulnerable functions (named with the CVE IDs):
+   * The vulnerable functions are all named with the CVE IDs (their names are starting with ‘cve-’ or ‘CVE-’). For example, “cve-2017-14005.c” is a vulnerable function. 
+   * The non-vulnerable functions are named with the format: “xxxx_file_name_function_name.c” to avoid duplicated file/function names. For example “1374_cmdutils.c_show_devices.c” is a non-vulnerable function.
 
 In the pre-training phase, one can choose any 5 projects as the historical data for training a LSTM network (the labels can be generated based on the file names (vulnerable functions have the CVE IDs as their file names. Please see the code for more details). Then, the remaining 1 project can be used as the input to the pre-trained network for generating representations. Finally, the generated representations can be used as features for training a classifier. 
 
